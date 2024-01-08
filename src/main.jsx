@@ -14,6 +14,7 @@ import {
   WSection,
   MSectionInfoLoader,
   WSectionInfoLoader,
+  About,
 } from "./components/index.js";
 
 const router = createBrowserRouter(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         path="women's section"
         element={<WSection />}
       />
+      <Route path="About" element={<About />} />
     </Route>
   )
 );
