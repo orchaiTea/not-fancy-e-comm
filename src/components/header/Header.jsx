@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../img/shopsphere-logo-black.png";
 
 export default function Header() {
   const [isDropdownOpen, setdropdownOpen] = useState(false);
@@ -14,11 +15,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="mr-3 h-12"
-                alt="Logo"
-              />
+              <img src={logo} className="px-3 my-2 h-12" alt="Logo" />
             </Link>
           </div>
 
