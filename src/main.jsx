@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import {
-  Collection,
+  Home,
   MSection,
   WSection,
   MSectionInfoLoader,
@@ -20,7 +20,7 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Collection />} />
+      <Route path="" element={<Home />} />
       <Route
         loader={MSectionInfoLoader}
         path="men's section"
