@@ -1,1 +1,47 @@
+.header {
+  background-color: brown;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  /* width: 100%; */
+}
+
+.dropdown-content link {
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.img-container {
+  grid-column: 2/-1;
+}
+
+.menu {
+  grid-row: 1/2;
+  align-self: center;
+}
