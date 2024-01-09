@@ -1,6 +1,6 @@
 # ShopShpere
 
-My Experiments with the freestoreapi.
+My Experiments with the fakestoreapi.
 
 This is an ever improving project.
 
