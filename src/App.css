@@ -1,13 +1,10 @@
-.header {
-  background-color: brown;
-}
-
 .navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
-.dropdown {
+.dropdown-btn {
   position: relative;
 }
 
@@ -17,7 +14,7 @@
   top: 100%;
   left: 0;
   z-index: 1;
-  /* width: 100%; */
+  transform: translateY(-10px);
 }
 
 .dropdown-content link {
