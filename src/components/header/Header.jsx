@@ -7,7 +7,7 @@ export default function Header() {
     <div className="header sticky z-50 top-0 px-3 py-2 bg-gray-200">
       <nav className="navbar h-fit">
         <div>
-          <h3 className="pl-2 text-rose-600 font-semibold">ShopSpere</h3>
+          <h3 className="pl-2 text-rose-600 font-semibold">ShopSphere</h3>
         </div>
         <div className="">
           <NavLink
