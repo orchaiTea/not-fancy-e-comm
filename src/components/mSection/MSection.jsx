@@ -53,7 +53,7 @@ export default function MSection() {
                       {count}
                     </span>
                     <button
-                      onClick={() => count > 0 && setCount(count - 1)}
+                      onClick={() => count > 1 && setCount(count - 1)}
                       className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-s border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12"
                     >
                       -
