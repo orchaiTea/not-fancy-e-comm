@@ -5,6 +5,7 @@ import WSection from "./wSection/WSection";
 import { MSectionInfoLoader } from "./mSection/MSection";
 import { WSectionInfoLoader } from "./wSection/WSection";
 import About from "./about/About";
+import Footer from "./footer/Footer";
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   MSectionInfoLoader,
   WSectionInfoLoader,
   About,
+  Footer,
 };
