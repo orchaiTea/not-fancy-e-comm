@@ -20,16 +20,6 @@ export default function Header() {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${
-                isActive ? "text-rose-600" : "text-black"
-              } pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
-            }
-          >
-            About
-          </NavLink>
 
           {/* Dropdown button */}
           <div className="dropdown dropdown-btn inline-block">
