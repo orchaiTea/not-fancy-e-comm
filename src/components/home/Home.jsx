@@ -5,15 +5,10 @@ import "../../App.css";
 function Home() {
   return (
     <div className="container">
-      <div
-        className="img-container"
-        style={{
-          backgroundImage: `url(${bgImg})`,
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      <img
+        src={bgImg}
+        className="img-container object-cover h-screen w-screen"
+      />
       <div className="menu px-3 py-2">
         <p className="tag-line leading-9 text-pretty text-lg font-medium">
           <span className="underline decoration-pink-500">Discover</span>{" "}
