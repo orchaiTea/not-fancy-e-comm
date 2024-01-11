@@ -1,3 +1,5 @@
+/* Header */
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -24,6 +26,8 @@
 .dropdown:hover .dropdown-content {
   display: inline-block;
 }
+
+/* Home */
 
 .container {
   min-height: 100vh;
