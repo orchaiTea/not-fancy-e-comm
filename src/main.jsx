@@ -15,12 +15,15 @@ import {
   MSectionInfoLoader,
   WSectionInfoLoader,
   About,
+  Electronics,
+  electronicsInfoLoader,
 } from "./components/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
+      <Route path="About" element={<About />} />
       <Route
         loader={MSectionInfoLoader}
         path="men's section"
@@ -31,7 +34,11 @@ const router = createBrowserRouter(
         path="women's section"
         element={<WSection />}
       />
-      <Route path="About" element={<About />} />
+      <Route
+        loader={electronicsInfoLoader}
+        path="electronics"
+        element={<Electronics />}
+      />
     </Route>
   )
 );
