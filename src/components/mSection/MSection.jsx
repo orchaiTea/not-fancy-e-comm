@@ -15,7 +15,7 @@ export default function MSection() {
   const onNextClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     setCount(1);
-    // setPrice((prevPrice) => prevPrice);
+    setPrice(data[currentIndex]?.price);
   };
 
   useEffect(() => {
