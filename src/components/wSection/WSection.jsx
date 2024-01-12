@@ -5,6 +5,8 @@ import { useLoaderData } from "react-router-dom";
 export default function WSection() {
   const data = useLoaderData();
   const [currentIndex, SetCurrentIndex] = useState(0);
+  const [count, setCount] = useState(1);
+  const [price, setPrice] = useState(data[currentIndex]?.price);
 
   const updateIndex = () => {
     data[currentIndex];
@@ -12,11 +14,23 @@ export default function WSection() {
 
   const onNextClick = () => {
     SetCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    setCount(1);
+    setPrice(data[currentIndex]?.price);
   };
 
   useEffect(() => {
     updateIndex();
   }, [currentIndex, data]);
+
+  const handleIncrement = () => {
+    setCount((prevCount) => prevCount + 1);
+    setPrice((prevPrice) => prevPrice * (count + 1));
+  };
+
+  const handleDecrement = () => {
+    setCount((prevCount) => prevCount - 1);
+    setPrice((prevPrice) => prevPrice / count);
+  };
 
   return (
     <div>
@@ -41,18 +55,24 @@ export default function WSection() {
                 </p>
                 <div className="mb-5 mt-6 flex justify-between items-center border-b-2 border-gray-100 pb-5">
                   <div className="group flex h-11 flex-shrink-0 items-center justify-between overflow-hidden rounded-md border border-gray-300 md:h-12">
-                    <button className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-e border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12">
+                    <button
+                      onClick={handleIncrement}
+                      className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-e border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12"
+                    >
                       +
                     </button>
                     <span className="duration-250 text-heading flex h-full w-12  flex-shrink-0 cursor-default items-center justify-center text-base font-semibold transition-colors ease-in-out  md:w-20 xl:w-24">
-                      1
+                      {count}
                     </span>
-                    <button className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-s border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12">
+                    <button
+                      onClick={handleDecrement}
+                      className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-s border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12"
+                    >
                       -
                     </button>
                   </div>
                   <div className="title-font text-xl font-bold text-gray-900">
-                    ${data[currentIndex].price}
+                    ${price}
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
