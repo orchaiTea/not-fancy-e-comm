@@ -25,3 +25,4 @@ dist-ssr
 src/components/header/navbar.txt
 src/components/footer/footer.txt
 src/components/mSection/msection.txt
+src/components/Product.jsx

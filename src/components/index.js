@@ -6,6 +6,8 @@ import { MSectionInfoLoader } from "./mSection/MSection";
 import { WSectionInfoLoader } from "./wSection/WSection";
 import About from "./about/About";
 import Footer from "./footer/Footer";
+import Electronics from "./electronics/Electronics";
+import { electronicsInfoLoader } from "./electronics/Electronics";
 
 export {
   Header,
@@ -16,4 +18,6 @@ export {
   WSectionInfoLoader,
   About,
   Footer,
+  Electronics,
+  electronicsInfoLoader,
 };
