@@ -8,6 +8,8 @@ import About from "./about/About";
 import Footer from "./footer/Footer";
 import Electronics from "./electronics/Electronics";
 import { electronicsInfoLoader } from "./electronics/Electronics";
+import Jewelery from "./jewelery/Jewelery";
+import { jeweleryInfoLoader } from "./jewelery/Jewelery";
 
 export {
   Header,
@@ -20,4 +22,6 @@ export {
   Footer,
   Electronics,
   electronicsInfoLoader,
+  Jewelery,
+  jeweleryInfoLoader,
 };
