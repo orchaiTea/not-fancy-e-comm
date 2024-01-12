@@ -6,6 +6,7 @@ export default function MSection() {
   const data = useLoaderData();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
+  const [price, setPrice] = useState(data[currentIndex]?.price);
 
   const updateIndex = () => {
     data[currentIndex];
@@ -13,11 +14,49 @@ export default function MSection() {
 
   const onNextClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    setCount(1);
+    // setPrice((prevPrice) => prevPrice);
   };
 
   useEffect(() => {
     updateIndex();
   }, [currentIndex, data]);
+
+  const handleIncrement = () => {
+    console.log(
+      setPrice((prevState) => {
+        console.log(`previous price: ${prevState}`);
+        console.log(`current price: ${prevState * (count + 1)}`);
+        return prevState * (count + 1);
+      })
+    );
+    console.log(
+      setCount((prevCount) => {
+        console.log(`previous count: ${prevCount}`);
+        console.log(`current count: ${prevCount + 1}`);
+        return prevCount + 1;
+      })
+    );
+  };
+
+  const handleDecrement = () => {
+    if (count > 1) {
+      console.log(
+        setPrice((prevPrice) => {
+          console.log(`previous price: ${prevPrice}`);
+          console.log(`current price: ${prevPrice / count}`);
+          return prevPrice / count;
+        })
+      );
+      console.log(
+        setCount((prevCount) => {
+          console.log(`previous count: ${prevCount}`);
+          console.log(`current count: ${prevCount - 1}`);
+          return prevCount - 1;
+        })
+      );
+    }
+  };
 
   return (
     <div>
@@ -44,7 +83,7 @@ export default function MSection() {
                 <div className="mb-5 mt-6 flex justify-between items-center border-b-2 border-gray-100 pb-5">
                   <div className="group flex h-11 flex-shrink-0 items-center justify-between overflow-hidden rounded-md border border-gray-300 md:h-12">
                     <button
-                      onClick={() => setCount(count + 1)}
+                      onClick={handleIncrement}
                       className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-e border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12"
                     >
                       +
@@ -53,14 +92,14 @@ export default function MSection() {
                       {count}
                     </span>
                     <button
-                      onClick={() => count > 1 && setCount(count - 1)}
+                      onClick={handleDecrement}
                       className="text-heading hover:bg-heading flex h-full w-10 flex-shrink-0 items-center justify-center border-s border-gray-300 transition duration-300 ease-in-out focus:outline-none md:w-12"
                     >
                       -
                     </button>
                   </div>
                   <div className="title-font text-xl font-bold text-gray-900">
-                    $ {data[currentIndex]?.price}
+                    $ {price}
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
