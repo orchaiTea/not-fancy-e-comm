@@ -17,6 +17,8 @@ import {
   About,
   Electronics,
   electronicsInfoLoader,
+  Jewelery,
+  jeweleryInfoLoader,
 } from "./components/index.js";
 
 const router = createBrowserRouter(
@@ -38,6 +40,11 @@ const router = createBrowserRouter(
         loader={electronicsInfoLoader}
         path="electronics"
         element={<Electronics />}
+      />
+      <Route
+        loader={jeweleryInfoLoader}
+        path="jewelery"
+        element={<Jewelery />}
       />
     </Route>
   )

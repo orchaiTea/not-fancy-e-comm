@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../App.css";
 
@@ -70,7 +70,14 @@ export default function Header() {
           >
             Electronics
           </NavLink>
-          <NavLink className="pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white">
+          <NavLink
+            to="/jewelery"
+            className={({ isActive }) =>
+              `${
+                isActive ? "text-rose-600" : "text-black"
+              } pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
+            }
+          >
             Jewelery
           </NavLink>
         </div>
