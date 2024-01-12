@@ -15,7 +15,7 @@ export default function Electronics() {
   const onNextClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     setCount(1);
-    // setPrice((prevPrice) => prevPrice);
+    setPrice(data[currentIndex?.price]);
   };
 
   React.useEffect(() => {
