@@ -12,7 +12,6 @@ import {
   Home,
   MSection,
   WSection,
-  MSectionInfoLoader,
   WSectionInfoLoader,
   About,
   Electronics,
@@ -21,13 +20,15 @@ import {
   jeweleryInfoLoader,
 } from "./components/index.js";
 
+import dataLoader from "./fetchData/fetchData.js";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="About" element={<About />} />
       <Route
-        loader={MSectionInfoLoader}
+        loader={dataLoader.mProductInfoLoader}
         path="men's section"
         element={<MSection />}
       />
