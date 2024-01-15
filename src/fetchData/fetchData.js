@@ -10,6 +10,14 @@ export class DataLoader {
       console.log(`Oops!${error}`);
     }
   }
+  async wProductInfoLoader() {
+    try {
+      const res = await apiServices.getWomenClothing();
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 const dataLoader = new DataLoader();

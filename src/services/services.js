@@ -20,6 +20,15 @@ export class ApiService {
       console.log(error);
     }
   }
+
+  async getWomenClothing() {
+    try {
+      const response = await this.client.get("/women's clothing");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 const service = new ApiService();

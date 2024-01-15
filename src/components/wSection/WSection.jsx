@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
@@ -100,14 +99,3 @@ export default function WSection() {
     </div>
   );
 }
-
-export const WSectionInfoLoader = async () => {
-  try {
-    const res = await axios.get(
-      "https://fakestoreapi.com/products/category/women's clothing"
-    );
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
