@@ -12,7 +12,6 @@ import {
   Home,
   MSection,
   WSection,
-  WSectionInfoLoader,
   About,
   Electronics,
   electronicsInfoLoader,
@@ -33,7 +32,7 @@ const router = createBrowserRouter(
         element={<MSection />}
       />
       <Route
-        loader={WSectionInfoLoader}
+        loader={dataLoader.wProductInfoLoader}
         path="women's section"
         element={<WSection />}
       />
