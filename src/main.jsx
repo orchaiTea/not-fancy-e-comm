@@ -14,9 +14,7 @@ import {
   WSection,
   About,
   Electronics,
-  electronicsInfoLoader,
   Jewelery,
-  jeweleryInfoLoader,
 } from "./components/index.js";
 
 import dataLoader from "./fetchData/fetchData.js";
@@ -37,12 +35,12 @@ const router = createBrowserRouter(
         element={<WSection />}
       />
       <Route
-        loader={electronicsInfoLoader}
+        loader={dataLoader.electronicsInfoLoader}
         path="electronics"
         element={<Electronics />}
       />
       <Route
-        loader={jeweleryInfoLoader}
+        loader={dataLoader.jeweleryInfoLoader}
         path="jewelery"
         element={<Jewelery />}
       />
