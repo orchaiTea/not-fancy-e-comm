@@ -18,6 +18,22 @@ export class DataLoader {
       console.log(error);
     }
   }
+  async jeweleryInfoLoader() {
+    try {
+      const res = await apiServices.getJewelery();
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async electronicsInfoLoader() {
+    try {
+      const res = await apiServices.getElectronics();
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 const dataLoader = new DataLoader();

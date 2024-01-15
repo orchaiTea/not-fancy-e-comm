@@ -29,6 +29,24 @@ export class ApiService {
       console.log(error);
     }
   }
+
+  async getJewelery() {
+    try {
+      const response = await this.client.get("/jewelery");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getElectronics() {
+    try {
+      const response = await this.client.get("/electronics");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 const service = new ApiService();

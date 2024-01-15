@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 export default function Electronics() {
@@ -127,14 +126,3 @@ export default function Electronics() {
     </div>
   );
 }
-
-export const electronicsInfoLoader = async () => {
-  try {
-    const res = await axios.get(
-      "https://fakestoreapi.com/products/category/electronics"
-    );
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
