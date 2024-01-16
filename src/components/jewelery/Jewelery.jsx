@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 export default function Jewelery() {
@@ -15,7 +14,7 @@ export default function Jewelery() {
   const onNextClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     setCount(1);
-    setPrice(data[currentIndex?.price]);
+    setPrice(data[currentIndex]?.price);
   };
 
   React.useEffect(() => {
@@ -127,14 +126,3 @@ export default function Jewelery() {
     </div>
   );
 }
-
-export const jeweleryInfoLoader = async () => {
-  try {
-    const res = await axios.get(
-      "https://fakestoreapi.com/products/category/jewelery"
-    );
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
