@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
@@ -17,6 +16,18 @@ export default function MSection() {
     setCount(1);
     setPrice(data[currentIndex]?.price);
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await apiServices.getMenClothing();
+        console.log(res);
+        setdata(res);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     updateIndex();
@@ -127,14 +138,3 @@ export default function MSection() {
     </div>
   );
 }
-
-export const MSectionInfoLoader = async () => {
-  try {
-    const res = await axios.get(
-      "https://fakestoreapi.com/products/category/men's clothing"
-    );
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
