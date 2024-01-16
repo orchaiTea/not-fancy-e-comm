@@ -17,7 +17,7 @@ import {
   Jewelery,
 } from "./components/index.js";
 
-import dataLoader from "./fetchData/fetchData.js";
+import dataLoader from "./api/api.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
