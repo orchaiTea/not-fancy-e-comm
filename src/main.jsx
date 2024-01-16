@@ -12,14 +12,12 @@ import {
   Home,
   MSection,
   WSection,
-  MSectionInfoLoader,
-  WSectionInfoLoader,
   About,
   Electronics,
-  electronicsInfoLoader,
   Jewelery,
-  jeweleryInfoLoader,
 } from "./components/index.js";
+
+import dataLoader from "./api/api.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,22 +25,22 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="About" element={<About />} />
       <Route
-        loader={MSectionInfoLoader}
+        loader={dataLoader.mProductInfoLoader}
         path="men's section"
         element={<MSection />}
       />
       <Route
-        loader={WSectionInfoLoader}
+        loader={dataLoader.wProductInfoLoader}
         path="women's section"
         element={<WSection />}
       />
       <Route
-        loader={electronicsInfoLoader}
+        loader={dataLoader.electronicsInfoLoader}
         path="electronics"
         element={<Electronics />}
       />
       <Route
-        loader={jeweleryInfoLoader}
+        loader={dataLoader.jeweleryInfoLoader}
         path="jewelery"
         element={<Jewelery />}
       />
