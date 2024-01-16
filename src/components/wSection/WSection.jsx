@@ -28,8 +28,10 @@ export default function WSection() {
   };
 
   const handleDecrement = () => {
-    setCount((prevCount) => prevCount - 1);
-    setPrice((prevPrice) => prevPrice / count);
+    if (count > 1) {
+      setCount((prevCount) => prevCount - 1);
+      setPrice((prevPrice) => prevPrice / count);
+    }
   };
 
   return (
