@@ -18,18 +18,6 @@ export default function MSection() {
   };
 
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await apiServices.getMenClothing();
-        console.log(res);
-        setdata(res);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
-
-  useEffect(() => {
     updateIndex();
   }, [currentIndex, data]);
 
