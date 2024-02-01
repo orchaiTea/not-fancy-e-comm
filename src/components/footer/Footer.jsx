@@ -20,7 +20,11 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <NavLink to="/about" className="hover:underline">
+                  <NavLink
+                    to="https://github.com/orchaiTea/not-fancy-e-comm"
+                    className="hover:underline"
+                    target="_blank"
+                  >
                     About
                   </NavLink>
                 </li>
