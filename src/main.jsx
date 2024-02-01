@@ -8,14 +8,14 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
+import { Home, About } from "./components/index.js";
+
 import {
-  Home,
-  MSection,
-  WSection,
-  About,
+  MensProducts,
+  WomensProducts,
   Electronics,
   Jewelery,
-} from "./components/index.js";
+} from "./pages/index.js";
 
 import dataLoader from "./api/api.js";
 
@@ -27,12 +27,12 @@ const router = createBrowserRouter(
       <Route
         loader={dataLoader.mProductInfoLoader}
         path="men's section"
-        element={<MSection />}
+        element={<MensProducts />}
       />
       <Route
         loader={dataLoader.wProductInfoLoader}
         path="women's section"
-        element={<WSection />}
+        element={<WomensProducts />}
       />
       <Route
         loader={dataLoader.electronicsInfoLoader}
