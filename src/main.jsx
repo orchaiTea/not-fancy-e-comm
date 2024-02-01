@@ -8,7 +8,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
-import { Home, About } from "./components/index.js";
+import { Home } from "./components/index.js";
 
 import {
   MensProducts,
@@ -23,7 +23,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
-      <Route path="About" element={<About />} />
       <Route
         loader={dataLoader.mProductInfoLoader}
         path="men's section"
