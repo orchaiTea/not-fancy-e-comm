@@ -62,4 +62,4 @@ Follow these steps to get the project up and running:
 
 ### License
 
-This project is licensed under the [MIT License](#LICENSE) - see the [License](#LICENSE) file for details.
+This project is licensed under the MIT License - see the [License](https://github.com/orchaiTea/not-fancy-e-comm/blob/master/LICENSE.md) file for details.
