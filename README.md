@@ -62,4 +62,4 @@ Follow these steps to get the project up and running:
 
 ### License
 
-This project is licensed under the [bla-bla-bla](LICENSE) - see the [does not exist](LICENSE) file for details.
+This project is licensed under the [MIT License](#LICENSE) - see the [License](#LICENSE) file for details.
