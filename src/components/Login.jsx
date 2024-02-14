@@ -50,7 +50,10 @@ function Login() {
               //   required: true,
               // })}
             />
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              className="w-full hover:bg-rose-700 active:bg-rose-400"
+            >
               Sign in
             </Button>
           </div>
