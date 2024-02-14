@@ -15,6 +15,8 @@ import {
   WomensProducts,
   Electronics,
   Jewelery,
+  Signup,
+  Login,
 } from "./pages/index.js";
 
 import dataLoader from "./api/api.js";
@@ -43,6 +45,8 @@ const router = createBrowserRouter(
         path="jewelery"
         element={<Jewelery />}
       />
+      <Route path="signup" element={<Signup />} />
+      <Route path="login" element={<Login />} />
     </Route>
   )
 );
