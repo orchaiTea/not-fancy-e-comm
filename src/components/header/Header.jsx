@@ -82,12 +82,18 @@ export default function Header() {
           </NavLink>
         </div>
         <div className="navbar-rt-side">
-          <button className="pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white">
+          <NavLink
+            to="/login"
+            className="pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white"
+          >
             Login
-          </button>
-          <button className="px-3 py-2 rounded bg-rose-600 text-white font-medium active:text-pink-500 focus:ring-white active:text-white">
+          </NavLink>
+          <NavLink
+            to="/signup"
+            className="px-3 py-2 rounded bg-rose-600 text-white font-medium hover:bg-rose-700 active:bg-rose-400"
+          >
             Signup
-          </button>
+          </NavLink>
           <i class="fa-solid fa-cart-shopping pl-3"></i>
         </div>
       </nav>
