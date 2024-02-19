@@ -4,7 +4,7 @@ import "../../App.css";
 
 export default function Header() {
   return (
-    <div className="header sticky z-50 top-0 px-3 py-2 bg-gray-200">
+    <div className="header sticky z-50 top-0 px-2 py-3 bg-gray-200">
       <nav className="navbar h-fit">
         <div>
           <h3 className="pl-2 text-rose-600 font-semibold">ShopSphere</h3>
