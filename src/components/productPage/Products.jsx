@@ -6,54 +6,29 @@ export default function Products() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(data[currentIndex]?.price);
-
-  const updateIndex = () => {
-    data[currentIndex];
-  };
+  const [initialPrice, setInitialPrice] = useState(data[currentIndex]?.price);
 
   const onNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    const nextIndex = (currentIndex + 1) % data.length;
+    setCurrentIndex(nextIndex);
     setCount(1);
-    setPrice(data[currentIndex]?.price);
+    setInitialPrice(data[nextIndex]?.price); // Update initial price when currentIndex changes
+    setPrice(data[nextIndex]?.price); // Reset price to initial price on next click
   };
 
   useEffect(() => {
-    updateIndex();
+    setPrice(data[currentIndex]?.price); // Update price when currentIndex changes
   }, [currentIndex, data]);
 
   const handleIncrement = () => {
-    console.log(
-      setPrice((prevState) => {
-        console.log(`previous price: ${prevState}`);
-        console.log(`current price: ${prevState * (count + 1)}`);
-        return prevState * (count + 1);
-      })
-    );
-    console.log(
-      setCount((prevCount) => {
-        console.log(`previous count: ${prevCount}`);
-        console.log(`current count: ${prevCount + 1}`);
-        return prevCount + 1;
-      })
-    );
+    setCount((prevCount) => prevCount + 1);
+    setPrice(initialPrice * (count + 1)); // Multiply initial price by count
   };
 
   const handleDecrement = () => {
     if (count > 1) {
-      console.log(
-        setPrice((prevPrice) => {
-          console.log(`previous price: ${prevPrice}`);
-          console.log(`current price: ${prevPrice / count}`);
-          return prevPrice / count;
-        })
-      );
-      console.log(
-        setCount((prevCount) => {
-          console.log(`previous count: ${prevCount}`);
-          console.log(`current count: ${prevCount - 1}`);
-          return prevCount - 1;
-        })
-      );
+      setCount((prevCount) => prevCount - 1);
+      setPrice(initialPrice * (count - 1)); // Multiply initial price by count
     }
   };
 
