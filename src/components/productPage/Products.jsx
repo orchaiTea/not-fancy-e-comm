@@ -23,25 +23,24 @@ export default function Products() {
     const nextIndex = (currentIndex + 1) % data.length;
     setCurrentIndex(nextIndex);
     setCount(1);
-    setInitialPrice(data[nextIndex]?.price); // Update initial price when currentIndex changes
-    setPrice(data[nextIndex]?.price); // Reset price to initial price on next click
+    setInitialPrice(data[nextIndex]?.price); // Updating initial price when currentIndex changes
+    setPrice(data[nextIndex]?.price); // Reseting price to initial price on next click
     console.log(`On Next Click: ${data[currentIndex]?.id}`);
-    console.log(data);
   };
 
   useEffect(() => {
-    setPrice(data[currentIndex]?.price); // Update price when currentIndex changes
+    setPrice(data[currentIndex]?.price); // Updating price when currentIndex changes
   }, [currentIndex, data]);
 
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
-    setPrice(initialPrice * (count + 1)); // Multiply initial price by count
+    setPrice(initialPrice * (count + 1)); // Multipling initial price by count
   };
 
   const handleDecrement = () => {
     if (count > 1) {
       setCount((prevCount) => prevCount - 1);
-      setPrice(initialPrice * (count - 1)); // Multiply initial price by count
+      setPrice(initialPrice * (count - 1)); // Multipling initial price by count
     }
   };
 
@@ -90,14 +89,8 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  {/* <button
-                    type="button"
-                    className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    onClick={addToCart}
-                  >
-                    Add To Cart
-                  </button> */}
                   <Button
+                    className="bg-black text-white hover:bg-black/80"
                     onClick={() => {
                       addToCart(data[currentIndex]);
                     }}
