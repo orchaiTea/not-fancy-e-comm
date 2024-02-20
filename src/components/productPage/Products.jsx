@@ -1,59 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Button from "../Button";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../features/cart/cartSlice";
 
 export default function Products() {
   const data = useLoaderData();
+  const dispatch = useDispatch();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(data[currentIndex]?.price);
+  const [initialPrice, setInitialPrice] = useState(data[currentIndex]?.price);
 
-  const updateIndex = () => {
-    data[currentIndex];
+  const addToCart = (item) => {
+    console.log(
+      `Added to Cart:, ID:${data[currentIndex]?.id}, PRICE:${data[currentIndex]?.price}`
+    );
+    dispatch(addItemToCart(item));
   };
 
   const onNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+    const nextIndex = (currentIndex + 1) % data.length;
+    setCurrentIndex(nextIndex);
     setCount(1);
-    setPrice(data[currentIndex]?.price);
+    setInitialPrice(data[nextIndex]?.price); // Updating initial price when currentIndex changes
+    setPrice(data[nextIndex]?.price); // Reseting price to initial price on next click
+    console.log(`On Next Click: ${data[currentIndex]?.id}`);
   };
 
   useEffect(() => {
-    updateIndex();
+    setPrice(data[currentIndex]?.price); // Updating price when currentIndex changes
   }, [currentIndex, data]);
 
   const handleIncrement = () => {
-    console.log(
-      setPrice((prevState) => {
-        console.log(`previous price: ${prevState}`);
-        console.log(`current price: ${prevState * (count + 1)}`);
-        return prevState * (count + 1);
-      })
-    );
-    console.log(
-      setCount((prevCount) => {
-        console.log(`previous count: ${prevCount}`);
-        console.log(`current count: ${prevCount + 1}`);
-        return prevCount + 1;
-      })
-    );
+    setCount((prevCount) => prevCount + 1);
+    setPrice(initialPrice * (count + 1)); // Multipling initial price by count
   };
 
   const handleDecrement = () => {
     if (count > 1) {
-      console.log(
-        setPrice((prevPrice) => {
-          console.log(`previous price: ${prevPrice}`);
-          console.log(`current price: ${prevPrice / count}`);
-          return prevPrice / count;
-        })
-      );
-      console.log(
-        setCount((prevCount) => {
-          console.log(`previous count: ${prevCount}`);
-          console.log(`current count: ${prevCount - 1}`);
-          return prevCount - 1;
-        })
-      );
+      setCount((prevCount) => prevCount - 1);
+      setPrice(initialPrice * (count - 1)); // Multipling initial price by count
     }
   };
 
@@ -102,12 +89,14 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <button
-                    type="button"
-                    className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                  <Button
+                    className="bg-black text-white hover:bg-black/80"
+                    onClick={() => {
+                      addToCart(data[currentIndex]);
+                    }}
                   >
                     Add to Cart
-                  </button>
+                  </Button>
                   <button
                     type="button"
                     className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
