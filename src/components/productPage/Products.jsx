@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Button from "../Button";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../features/cart/cartSlice";
 
 export default function Products() {
   const data = useLoaderData();
+  const dispatch = useDispatch();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(data[currentIndex]?.price);
   const [initialPrice, setInitialPrice] = useState(data[currentIndex]?.price);
+
+  const addToCart = (item) => {
+    console.log(
+      `Added to Cart:, ID:${data[currentIndex]?.id}, PRICE:${data[currentIndex]?.price}`
+    );
+    dispatch(addItemToCart(item));
+  };
 
   const onNextClick = () => {
     const nextIndex = (currentIndex + 1) % data.length;
@@ -14,6 +25,8 @@ export default function Products() {
     setCount(1);
     setInitialPrice(data[nextIndex]?.price); // Update initial price when currentIndex changes
     setPrice(data[nextIndex]?.price); // Reset price to initial price on next click
+    console.log(`On Next Click: ${data[currentIndex]?.id}`);
+    console.log(data);
   };
 
   useEffect(() => {
@@ -77,12 +90,20 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <button
+                  {/* <button
                     type="button"
                     className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    onClick={addToCart}
+                  >
+                    Add To Cart
+                  </button> */}
+                  <Button
+                    onClick={() => {
+                      addToCart(data[currentIndex]);
+                    }}
                   >
                     Add to Cart
-                  </button>
+                  </Button>
                   <button
                     type="button"
                     className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"

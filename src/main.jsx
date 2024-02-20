@@ -7,6 +7,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./app/store.js";
 import Layout from "./components/Layout.jsx";
 import { Home } from "./components/index.js";
 
@@ -17,6 +19,7 @@ import {
   Jewelery,
   Signup,
   Login,
+  Cart,
 } from "./pages/index.js";
 
 import dataLoader from "./api/api.js";
@@ -47,12 +50,15 @@ const router = createBrowserRouter(
       />
       <Route path="signup" element={<Signup />} />
       <Route path="login" element={<Login />} />
+      <Route path="cart" element={<Cart />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
