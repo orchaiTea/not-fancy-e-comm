@@ -1,20 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeItemFromCart } from "../../features/cart/cartSlice";
 
 export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
+
+  const removeItem = (item) => {
+    dispatch(removeItemFromCart(item));
+    console.log(item);
+  };
 
   return (
-    // <div>
-    //   <h1>Cart is Empty</h1>
-    //   <ul>
-    //     {cartItems?.map((item, index) => (
-    //       <li key={index}>
-    //         {item.id}, {item.title}, {item.price}, {item.description}
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
     <div className="mx-auto flex max-w-3xl flex-col space-y-4 p-6 px-2 sm:p-10 sm:px-2">
       <h2 className="text-3xl font-bold">Shopping Cart</h2>
       <p className="mt-3 text-sm font-medium text-gray-700">
@@ -41,7 +38,7 @@ export default function CartPage() {
                     <p className="text-sm">{"No such thing"}</p>
 
                     <div className="min-w-24 flex">
-                      <button type="button" className="h-7 w-7" onClick={""}>
+                      <button type="button" className="h-7 w-7" onClick="">
                         -
                       </button>
                       <input
@@ -53,7 +50,7 @@ export default function CartPage() {
                       <button
                         type="button"
                         className="flex h-7 w-7 items-center justify-center"
-                        onClick={""}
+                        onClick=""
                       >
                         +
                       </button>
@@ -66,11 +63,12 @@ export default function CartPage() {
                 </div>
                 <div className="flex divide-x text-sm">
                   <button
+                    onClick={() => removeItem(item)}
                     type="button"
                     className="flex items-center space-x-2 px-2 py-1 pl-0"
                   >
                     {/* <Trash size={16} /> */}
-                    <span>Remove</span>
+                    Remove
                   </button>
                 </div>
               </div>
