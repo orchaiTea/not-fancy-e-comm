@@ -65,9 +65,9 @@ export default function CartPage() {
                   <button
                     onClick={() => removeItem(item)}
                     type="button"
-                    className="flex items-center space-x-2 px-2 py-1 pl-0"
+                    className="flex items-center space-x-2 px-2 py-1 pl-0 hover:text-red-600 active:bg-red-600 active:text-white"
                   >
-                    {/* <Trash size={16} /> */}
+                    <i class="fa-solid fa-trash px-2"></i>
                     Remove
                   </button>
                 </div>
