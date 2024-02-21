@@ -24,9 +24,6 @@ export default function Products() {
     } else {
       dispatch(addItemToCart(item));
       setShowSuccessMessage(true);
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-      }, 2000);
     }
   };
 
@@ -124,13 +121,13 @@ export default function Products() {
         </div>
         {showAlert && (
           <Alert
-            message="Item is already added in the cart."
+            children="Item is already added in the cart."
             onClose={() => setShowAlert(false)}
           />
         )}
         {showSuccessMessage && (
           <Alert
-            message="Item is added to the cart."
+            children="Item is added to the cart."
             onClose={() => setShowSuccessMessage(false)}
           />
         )}
