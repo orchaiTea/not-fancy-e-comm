@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../features/cart/cartSlice";
+import FancyAlert from "../FancyAlert";
 
 export default function Products() {
   const data = useLoaderData();
@@ -12,13 +13,20 @@ export default function Products() {
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(data[currentIndex]?.price);
   const [initialPrice, setInitialPrice] = useState(data[currentIndex]?.price);
+  const [showAlert, setShowAlert] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleAddToCart = (item) => {
     const isItemInCart = cartItems.some((cartItem) => cartItem.id === item.id);
     if (isItemInCart) {
-      alert("Item already in the cart.");
+      setShowAlert(true);
+      console.log("clicked");
     } else {
       dispatch(addItemToCart(item));
+      setShowSuccessMessage(true);
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 2000);
     }
   };
 
@@ -114,6 +122,18 @@ export default function Products() {
             <h1>Sorry! Looks like Something went wrong.</h1>
           )}
         </div>
+        {showAlert && (
+          <FancyAlert
+            message="Item is already added in the cart."
+            onClose={() => setShowAlert(false)}
+          />
+        )}
+        {showSuccessMessage && (
+          <FancyAlert
+            message="Item is added to the cart."
+            onClose={() => setShowSuccessMessage(false)}
+          />
+        )}
       </section>
     </div>
   );
