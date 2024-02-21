@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Alert = ({ message, onClose }) => {
+const Alert = ({ children, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
@@ -16,7 +16,7 @@ const Alert = ({ message, onClose }) => {
       >
         &times;
       </span>
-      <p className="text-lg text-gray-800">{message}</p>
+      <p className="text-lg text-gray-800">{children}</p>
     </div>
   );
 };
