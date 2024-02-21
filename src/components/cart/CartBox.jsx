@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartBox({ index, item, removeItem }) {
+function CartBox({ index, item, onRemove }) {
   return (
     <div>
       <li
@@ -22,7 +22,7 @@ function CartBox({ index, item, removeItem }) {
                 <p className="text-sm">{`${index}`}</p>
 
                 <div className="min-w-24 flex">
-                  <button type="button" className="h-7 w-7" onClick={""}>
+                  <button type="button" className="h-7 w-7">
                     -
                   </button>
                   <input
@@ -45,7 +45,7 @@ function CartBox({ index, item, removeItem }) {
             </div>
             <div className="flex divide-x text-sm">
               <button
-                onClick={removeItem}
+                onClick={onRemove}
                 type="button"
                 className="flex items-center space-x-2 px-2 py-1 pl-0 hover:text-red-600 active:bg-red-600 active:text-white"
               >
