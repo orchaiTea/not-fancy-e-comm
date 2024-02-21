@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../features/cart/cartSlice";
-import FancyAlert from "../FancyAlert";
+import Alert from "../Alert";
 
 export default function Products() {
   const data = useLoaderData();
@@ -123,13 +123,13 @@ export default function Products() {
           )}
         </div>
         {showAlert && (
-          <FancyAlert
+          <Alert
             message="Item is already added in the cart."
             onClose={() => setShowAlert(false)}
           />
         )}
         {showSuccessMessage && (
-          <FancyAlert
+          <Alert
             message="Item is added to the cart."
             onClose={() => setShowSuccessMessage(false)}
           />
