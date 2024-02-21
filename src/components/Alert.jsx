@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const FancyAlert = ({ message, onClose }) => {
+const Alert = ({ message, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
@@ -21,4 +21,4 @@ const FancyAlert = ({ message, onClose }) => {
   );
 };
 
-export default FancyAlert;
+export default Alert;
