@@ -1,46 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Button from "../Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../features/cart/cartSlice";
 
 export default function Products() {
   const data = useLoaderData();
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(data[currentIndex]?.price);
   const [initialPrice, setInitialPrice] = useState(data[currentIndex]?.price);
 
-  const addToCart = (item) => {
-    console.log(
-      `Added to Cart:, ID:${data[currentIndex]?.id}, PRICE:${data[currentIndex]?.price}`
-    );
-    dispatch(addItemToCart(item));
+  const handleAddToCart = (item) => {
+    const isItemInCart = cartItems.some((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      alert("Item already in the cart.");
+    } else {
+      dispatch(addItemToCart(item));
+    }
   };
 
   const onNextClick = () => {
     const nextIndex = (currentIndex + 1) % data.length;
     setCurrentIndex(nextIndex);
     setCount(1);
-    setInitialPrice(data[nextIndex]?.price); // Updating initial price when currentIndex changes
-    setPrice(data[nextIndex]?.price); // Reseting price to initial price on next click
+    setInitialPrice(data[nextIndex]?.price);
+    setPrice(data[nextIndex]?.price);
     console.log(`On Next Click: ${data[currentIndex]?.id}`);
   };
 
   useEffect(() => {
-    setPrice(data[currentIndex]?.price); // Updating price when currentIndex changes
+    setPrice(data[currentIndex]?.price);
   }, [currentIndex, data]);
 
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
-    setPrice(initialPrice * (count + 1)); // Multipling initial price by count
+    setPrice(initialPrice * (count + 1));
   };
 
   const handleDecrement = () => {
     if (count > 1) {
       setCount((prevCount) => prevCount - 1);
-      setPrice(initialPrice * (count - 1)); // Multipling initial price by count
+      setPrice(initialPrice * (count - 1));
     }
   };
 
@@ -92,7 +95,7 @@ export default function Products() {
                   <Button
                     className="bg-black text-white hover:bg-black/80"
                     onClick={() => {
-                      addToCart(data[currentIndex]);
+                      handleAddToCart(data[currentIndex]);
                     }}
                   >
                     Add to Cart

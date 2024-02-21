@@ -35,22 +35,20 @@ export default function CartPage() {
                     <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                       {item.title}
                     </h3>
-                    <p className="text-sm">{"No such thing"}</p>
+                    <p className="text-sm">{`${index}`}</p>
 
                     <div className="min-w-24 flex">
-                      <button type="button" className="h-7 w-7" onClick="">
+                      <button type="button" className="h-7 w-7" onClick={""}>
                         -
                       </button>
                       <input
                         type="text"
                         className="mx-1 h-7 w-9 rounded-md border text-center"
-                        defaultValue={1}
-                        // value={count}
+                        defaultValue={item.rating.count}
                       />
                       <button
                         type="button"
                         className="flex h-7 w-7 items-center justify-center"
-                        onClick=""
                       >
                         +
                       </button>
