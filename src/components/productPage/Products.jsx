@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../features/cart/cartSlice";
 import Alert from "../Alert";
