@@ -36,7 +36,7 @@ function Login() {
             />
             <Button
               type="submit"
-              className="w-full hover:bg-rose-700 active:bg-rose-400"
+              className="w-full bg-rose-600 hover:bg-rose-700 active:bg-rose-400"
             >
               Sign in
             </Button>
