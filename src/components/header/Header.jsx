@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../App.css";
+import CartBadge from "../CartBadge";
 
 export default function Header() {
   return (
@@ -94,12 +95,10 @@ export default function Header() {
           >
             Signup
           </NavLink>
-          <Link
-            to="/cart"
+          <CartBadge
+            link="/cart"
             className="hover:text-green-500 active:color-green-600 active:text-white"
-          >
-            <i className="fa-solid fa-cart-shopping pl-3"></i>
-          </Link>
+          />
         </div>
       </nav>
     </div>
