@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React from "react";
 
 function CartBox({ item, onRemove }) {
   return (
@@ -18,7 +18,7 @@ function CartBox({ item, onRemove }) {
               <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                 {item.title}
               </h3>
-              {/* <p className="text-sm">{props}</p> */}
+              <p className="text-sm">{item.id}</p>
 
               <div className="min-w-24 flex">
                 <button type="button" className="h-7 w-7">
