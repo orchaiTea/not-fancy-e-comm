@@ -25,15 +25,15 @@ const ProductCard = ({ product, onAddToCart, onNextClick, price }) => {
         </div>
         <div className="flex items-center justify-between">
           <Button
-            className="bg-black text-white hover:bg-black/80"
+            className="bg-black text-white hover:bg-black/80 active-color-"
             onClick={onAddToCart}
           >
             Add to Cart
           </Button>
           <button
-            type="button"
-            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             onClick={onNextClick}
+            className="px-4 py-2 text-medium font-medium rounded-full
+            bg-zinc-500 hover:bg-zinc-700 text-white"
           >
             Next
           </button>

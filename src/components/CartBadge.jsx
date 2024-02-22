@@ -15,7 +15,7 @@ const CartBadge = ({ link, className = "" }) => {
     <Link to={link} className={`relative ${className}`}>
       <i className="fa-solid fa-cart-shopping pl-3"></i>
       {totalUniqueItems > 0 && (
-        <div className="absolute top-0 right-0 left-8 flex items-center justify-center w-4 h-4 bg-red-500 text-white rounded-full text-xs">
+        <div className="absolute top-0 right-0 left-8 flex items-center justify-center w-4 h-4 bg-green-500 text-white rounded-full text-xs">
           {totalUniqueItems}
         </div>
       )}

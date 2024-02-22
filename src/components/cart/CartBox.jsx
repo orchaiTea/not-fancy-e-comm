@@ -47,7 +47,7 @@ function CartBox({ item, onRemove }) {
             <button
               onClick={onRemove}
               type="button"
-              className="flex items-center space-x-2 px-2 py-1 pl-0 hover:text-red-600 active:bg-red-600 active:text-white"
+              className="flex items-center rounded-lg space-x-2 px-2 py-1 pl-0 hover:text-red-600 active:bg-red-600 active:text-white"
             >
               <i className="fa-solid fa-trash px-2"></i>
               Remove
