@@ -49,7 +49,7 @@ export default function CartPage() {
       </ul>
       {cartItems.length > 0 && (
         <div>
-          <div className="space-y-1 text-right">
+          <div className="space-y-1 text-right py-2">
             <p>
               Total amount:
               <span className="font-semibold"> ${totalPrice.toFixed(2)}</span>
