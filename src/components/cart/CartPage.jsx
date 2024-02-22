@@ -9,6 +9,8 @@ export default function CartPage() {
   const dispatch = useDispatch();
   const [checkoutMsg, setCheckoutMsg] = React.useState(false);
 
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
   const removeItem = (item) => {
     dispatch(removeItemFromCart(item));
   };
@@ -50,7 +52,7 @@ export default function CartPage() {
           <div className="space-y-1 text-right">
             <p>
               Total amount:
-              <span className="font-semibold"> ₹48,967</span>
+              <span className="font-semibold"> ${totalPrice.toFixed(2)}</span>
             </p>
           </div>
           <div className="flex justify-end space-x-4">
