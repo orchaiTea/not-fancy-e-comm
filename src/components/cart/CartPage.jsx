@@ -68,8 +68,8 @@ export default function CartPage() {
       )}
 
       {checkoutMsg && (
-        <Alert onClose={() => setCheckoutMsg(false)}>
-          "Order Placed! Thank You for Shopping with Us."
+        <Alert bgColor={`bg-yellow-600`} onClose={() => setCheckoutMsg(false)}>
+          Order Placed! Thank You for Shopping with Us.
         </Alert>
       )}
     </div>
