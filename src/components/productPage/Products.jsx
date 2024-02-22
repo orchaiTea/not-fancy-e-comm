@@ -38,13 +38,15 @@ export default function Products() {
     <div>
       {showAlert && (
         <Alert
-          children="Item is already added in the cart."
+          bgColor={`bg-red-600`}
+          children="Already in Cart."
           onClose={() => setShowAlert(false)}
         />
       )}
       {showSuccessMessage && (
         <Alert
-          children="Item is added to the cart."
+          bgColor={`bg-green-600`}
+          children="Successfully added."
           onClose={() => setShowSuccessMessage(false)}
         />
       )}
