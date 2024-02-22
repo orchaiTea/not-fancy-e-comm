@@ -94,7 +94,10 @@ export default function Header() {
           >
             Signup
           </NavLink>
-          <Link to="/cart">
+          <Link
+            to="/cart"
+            className="hover:text-green-500 active:color-green-600 active:text-white"
+          >
             <i class="fa-solid fa-cart-shopping pl-3"></i>
           </Link>
         </div>
