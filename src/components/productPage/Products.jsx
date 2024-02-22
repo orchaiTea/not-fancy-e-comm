@@ -18,7 +18,6 @@ export default function Products() {
     const isItemInCart = cartItems.some((cartItem) => cartItem.id === item.id);
     if (isItemInCart) {
       setShowAlert(true);
-      console.log("clicked");
     } else {
       dispatch(addItemToCart(item));
       setShowSuccessMessage(true);

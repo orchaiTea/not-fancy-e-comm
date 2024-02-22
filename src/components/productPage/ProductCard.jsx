@@ -3,7 +3,10 @@ import Button from "../Button";
 
 const ProductCard = ({ product, onAddToCart, onNextClick, price }) => {
   return (
-    <div className="mx-auto flex flex-wrap items-center lg:w-4/5 pb-8">
+    <div
+      key={product.id}
+      className="mx-auto flex flex-wrap items-center lg:w-4/5 pb-8"
+    >
       <img
         alt=""
         className="h-64 w-full rounded-lg object-cover lg:h-96 lg:w-1/2 object-scale-down"

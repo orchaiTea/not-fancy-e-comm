@@ -34,9 +34,9 @@ export default function Header() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M19 9l-7 7-7-7"
                 ></path>
               </svg>
@@ -98,7 +98,7 @@ export default function Header() {
             to="/cart"
             className="hover:text-green-500 active:color-green-600 active:text-white"
           >
-            <i class="fa-solid fa-cart-shopping pl-3"></i>
+            <i className="fa-solid fa-cart-shopping pl-3"></i>
           </Link>
         </div>
       </nav>
