@@ -17,8 +17,6 @@ import {
   WomensProducts,
   Electronics,
   Jewelery,
-  Signup,
-  Login,
   Cart,
 } from "./pages/index.js";
 
@@ -48,8 +46,6 @@ const router = createBrowserRouter(
         path="jewelery"
         element={<Jewelery />}
       />
-      <Route path="signup" element={<Signup />} />
-      <Route path="login" element={<Login />} />
       <Route path="cart" element={<Cart />} />
     </Route>
   )
