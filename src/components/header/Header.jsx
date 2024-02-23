@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../App.css";
+import CartBadge from "../CartBadge";
 
 export default function Header() {
   return (
@@ -34,9 +35,9 @@ export default function Header() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M19 9l-7 7-7-7"
                 ></path>
               </svg>
@@ -82,21 +83,10 @@ export default function Header() {
           </NavLink>
         </div>
         <div className="navbar-rt-side">
-          <NavLink
-            to="/login"
-            className="pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white"
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to="/signup"
-            className="px-3 py-2 rounded bg-rose-600 text-white font-medium hover:bg-rose-700 active:bg-rose-400"
-          >
-            Signup
-          </NavLink>
-          <Link to="/cart">
-            <i class="fa-solid fa-cart-shopping pl-3"></i>
-          </Link>
+          <CartBadge
+            link="/cart"
+            className="hover:text-green-500 active:color-green-600 active:text-white"
+          />
         </div>
       </nav>
     </div>
