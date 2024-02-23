@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromCart } from "../../features/cart/cartSlice";
+import { removeItemFromCart, emptyCart } from "../../features/cart/cartSlice";
 import CartBox from "./CartBox";
 import Alert from "../Alert";
 
@@ -16,6 +16,7 @@ export default function CartPage() {
   };
 
   const handleCheckout = () => {
+    dispatch(emptyCart());
     setCheckoutMsg(true);
   };
 
