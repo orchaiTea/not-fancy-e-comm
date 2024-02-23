@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartBox({ item, onRemove }) {
+function CartBox({ item, onRemove, onIncrement }) {
   return (
     <li
       key={item.id}
@@ -18,25 +18,6 @@ function CartBox({ item, onRemove }) {
               <h3 className="text-lg font-semibold leading-snug sm:pr-8">
                 {item.title}
               </h3>
-              <p className="text-sm">{item.id}</p>
-
-              <div className="min-w-24 flex">
-                <button type="button" className="h-7 w-7">
-                  -
-                </button>
-                <input
-                  id={item.id}
-                  type="text"
-                  className="mx-1 h-7 w-9 rounded-md border text-center"
-                  defaultValue={item.rating.count}
-                />
-                <button
-                  type="button"
-                  className="flex h-7 w-7 items-center justify-center"
-                >
-                  +
-                </button>
-              </div>
             </div>
 
             <div className="text-right">
