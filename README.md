@@ -1,8 +1,8 @@
-# ShopShpere - An E-Commerce Project
+# ShopSphere - An E-Commerce Project
 
 ## Description:
 
-ShopShere is an e-commerce website that brings you a curated collection of products from various categories. This project uses the Fakestore API.
+ShopSphere is an e-commerce website that brings you a curated collection of products from various categories. This project uses the Fakestore API.
 
 ### Table Of Content
 
