@@ -7,11 +7,11 @@ function Footer() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex items-center">
+            <div className="flex items-center">
               <h1 className="pl-2 text-rose-600 font-semibold text-xl">
                 ShopShere
               </h1>
-            </Link>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
@@ -29,7 +29,7 @@ function Footer() {
                   </NavLink>
                 </li>
                 <li>
-                  <Link className="hover:underline">Jobs</Link>
+                  <Link>Jobs</Link>
                 </li>
               </ul>
             </div>
@@ -49,11 +49,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link
-                    to="https://twitter.com"
-                    className="hover:underline"
-                    target="_black"
-                  >
+                  <Link to="" target="_black">
                     Twitter
                   </Link>
                 </li>
@@ -65,14 +61,10 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="#" className="hover:underline">
-                    Privacy Policy
-                  </Link>
+                  <Link to="#">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:underline">
-                    Terms &amp; Conditions
-                  </Link>
+                  <Link to="#">Terms &amp; Conditions</Link>
                 </li>
               </ul>
             </div>
@@ -82,11 +74,7 @@ function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
             © 2024
-            <Link to="" className="hover:underline">
-              {" "}
-              pushkartripathi
-            </Link>
-            . All Rights Reserved.
+            <span> pushkartripathi</span>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
             <Link to="#" className="text-gray-500 hover:text-gray-900">
