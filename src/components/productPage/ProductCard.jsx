@@ -25,7 +25,7 @@ const ProductCard = ({ product, onAddToCart, onNextClick, price }) => {
         </div>
         <div className="flex items-center justify-between">
           <Button
-            className="bg-black text-white hover:bg-black/80 active-color-"
+            className="bg-black text-white active:bg-black/80"
             onClick={onAddToCart}
           >
             Add to Cart
