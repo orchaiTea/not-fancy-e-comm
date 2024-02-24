@@ -2,11 +2,7 @@
 
 ## Description:
 
-ShopShere is an e-commerce website that brings you a curated collection of products from various categories. This project utilizes the Fakestore API.
-
-## Important Notice
-
-Under development, as it is not in its final state yet.
+ShopShere is an e-commerce website that brings you a curated collection of products from various categories. This project uses the Fakestore API.
 
 ### Table Of Content
 
@@ -50,13 +46,15 @@ Follow these steps to get the project up and running:
 
 ### Features
 
-- Data fetching trigger from the api with the hover effect.
-- Memoization of the fetched data.
-- Routing
+- Data fetching trigger from the hover effect.
+- Memoization or cachefication of the fetched data.
+- Routing, State management with redux-toolkit.
 - State reset on every "next" click.
-- Correlation of the increment/decrement button with the price of that item.
+- Add to cart functionality.
+- Remove from cart functionality.
+- Checkout functionality.
 
-### Thanking
+### Thanks
 
 @keikaavousi \(for developing the fakestoreapi.com.\)
 
