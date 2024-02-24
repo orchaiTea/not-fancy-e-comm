@@ -33,7 +33,7 @@ const ProductCard = ({ product, onAddToCart, onNextClick, price }) => {
           <button
             onClick={onNextClick}
             className="px-4 py-2 text-medium font-medium rounded-full
-            bg-zinc-500 hover:bg-zinc-700 text-white"
+            bg-zinc-500 hover:bg-zinc-700 active:bg-zinc-500/80 text-white"
           >
             Next
           </button>
