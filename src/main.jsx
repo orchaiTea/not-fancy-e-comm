@@ -18,6 +18,7 @@ import {
   Electronics,
   Jewelery,
   Cart,
+  ErrorFour,
 } from "./pages/index.js";
 
 import dataLoader from "./api/api.js";
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
         element={<Jewelery />}
       />
       <Route path="cart" element={<Cart />} />
+      <Route path="*" element={<ErrorFour />} />
     </Route>
   )
 );
