@@ -112,91 +112,105 @@ export default function Header() {
           />
         </div>
       </nav>
+
       {isOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-gray-200 flex flex-col items-start">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            <svg
-              className="w-8 h-8 text-gray-800 cursor-pointer"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `${
-                isActive ? "text-rose-600" : "text-black"
-              } pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
-            }
-          >
-            Home
-          </NavLink>
-
-          {/* Dropdown button */}
-          <div className="dropdown dropdown-btn inline-block">
-            <button className="inline-flex px-3 hover:text-rose-600 font-medium">
-              fashion
-              {/* Dropdown arrow */}
+          <div className="px-4 py-2 flex items-center justify-between w-full">
+            <button onClick={toggleMenu} className="focus:outline-none">
               <svg
-                className="w-4 h-4 ml-2 -mr-1 inline-flex self-center hover:rotate-180 transition delay-150 duration-300 ease-in-out"
+                className="w-8 h-8 text-gray-800 cursor-pointer"
                 fill="none"
-                stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                stroke="currentColor"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
-
-            {/* Dropdown items */}
-            <div className="dropdown-content rounded bg-gray-200 border-4 py-1 px-3 shadow-lg mt-2 ring-1 ring-black ring-opacity-5">
-              <Link
-                to="/men's section"
-                className="block py-2 px-2 text-sm hover:text-rose-600 font-medium active:bg-pink-700 focus:ring-pink-300 active:text-white rounded"
-              >
-                Men
-              </Link>
-              <Link
-                to="/women's section"
-                className="inline-block py-2 px-2 text-sm hover:text-rose-600 font-medium active:bg-pink-700 focus:ring-pink-300 active:text-white rounded"
-              >
-                Women
-              </Link>
-            </div>
           </div>
-          <NavLink
-            to="/electronics"
-            className={({ isActive }) =>
-              `${
-                isActive ? "text-rose-600" : "text-black"
-              } pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
-            }
-          >
-            Electronics
-          </NavLink>
-          <NavLink
-            to="/jewelery"
-            className={({ isActive }) =>
-              `${
-                isActive ? "text-rose-600" : "text-black"
-              } pr-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
-            }
-          >
-            Jewelery
-          </NavLink>
+          <div className="py-3 flex flex-col">
+            <NavLink
+              to="/"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-rose-600" : "text-black"
+                } py-4 px-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
+              }
+            >
+              Home
+            </NavLink>
+
+            {/* Dropdown button */}
+            <div className="relative dropdown inline-block py-4">
+              <button className="px-3 hover:text-rose-600 font-medium">
+                Fashion
+                {/* Dropdown arrow */}
+                <svg
+                  className="w-4 h-4 ml-2 -mr-1 inline-flex self-center hover:rotate-180 transition delay-150 duration-300 ease-in-out"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              {/* Dropdown items */}
+              <div
+                className="dropdown-content mt-2 w-40 rounded bg-gray-200 border-4 py-1 px-3 shadow-lg ring-1 ring-black ring-opacity-5"
+                style={{ left: "calc(100% + 10px)" }}
+              >
+                <Link
+                  to="/men's section"
+                  onClick={toggleMenu}
+                  className="block py-2 px-2 text-sm hover:text-rose-600 font-medium active:bg-pink-700 focus:ring-pink-300 active:text-white rounded"
+                >
+                  Men
+                </Link>
+                <Link
+                  to="/women's section"
+                  onClick={toggleMenu}
+                  className="block py-2 px-2 text-sm hover:text-rose-600 font-medium active:bg-pink-700 focus:ring-pink-300 active:text-white rounded"
+                >
+                  Women
+                </Link>
+              </div>
+            </div>
+
+            <NavLink
+              to="/electronics"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-rose-600" : "text-black"
+                } py-4 px-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
+              }
+            >
+              Electronics
+            </NavLink>
+            <NavLink
+              to="/jewelery"
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                `${
+                  isActive ? "text-rose-600" : "text-black"
+                } py-4 px-3 hover:text-rose-600 font-medium active:text-pink-500 focus:ring-white active:text-white`
+              }
+            >
+              Jewelery
+            </NavLink>
+          </div>
         </div>
       )}
     </div>
