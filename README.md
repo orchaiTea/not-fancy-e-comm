@@ -54,9 +54,11 @@ Follow these steps to get the project up and running:
 - Remove from cart functionality.
 - Checkout functionality.
 
-### Thanks
+### Courtesy
 
-@keikaavousi \(for developing the fakestoreapi.com.\)
+- [keikaavousi](https://github.com/keikaavousi) \(for developing the fakestoreapi.com.\)
+
+- [Spencer Selover](https://www.pexels.com/@spencer-selover-142259/) (for the Home Page image.)
 
 ### License
 
