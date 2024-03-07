@@ -9,7 +9,7 @@ function Footer() {
           <div className="mb-6 md:mb-0">
             <div className="flex items-center">
               <h1 className="pl-2 text-rose-600 font-semibold text-xl">
-                ShopShere
+                ShopSphere
               </h1>
             </div>
           </div>
